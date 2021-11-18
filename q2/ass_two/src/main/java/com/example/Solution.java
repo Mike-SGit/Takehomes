@@ -10,6 +10,10 @@ public class Solution {
 // Complete the maxMoney function below.
     static int maxMoney(int n, long k) {
         
+        // fix; was thinking about this problem recently and realised i hadn't handled
+        // the case where k is triangular but k > n
+        if (k > n) return (int) (((n*(n+1))/2) % 1000000007);
+        
         //if julias number is triangular, she does not collect from student[0]
         //else she collects from all students
         boolean isTriangular = false;
